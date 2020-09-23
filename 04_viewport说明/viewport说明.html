@@ -3,8 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>viewport说明</title>
+	<!-- <meta name="viewport" content="width=device-width"> -->
+	<!-- <meta name="viewport" content="initial-scale=1.0"> -->
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+	<!-- <meta name="viewport" content=" maximum-scale=2.0"> -->
+	<!-- <meta name="viewport" content=" minimum-scale=0.9"> -->
+	<!-- <meta name="viewport" content="user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<style>
+		#info{
+			font-size:50px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="info"></div>
+	<script type="text/javascript" >
+		const info = document.getElementById('info')
+		console.log('布局视口为',document.documentElement.clientWidth);
+		console.log('视觉视口为',window.innerWidth);
+		info.innerHTML = '布局：'+document.documentElement.clientWidth+'<br/>'
+		info.innerHTML += '视觉：'+window.innerWidth
+		setInterval(()=>{
+			info.innerHTML = '布局：'+document.documentElement.clientWidth+'<br/>'
+			info.innerHTML += '视觉：'+window.innerWidth
+		},200)
+	</script>
 </body>
 </html>
