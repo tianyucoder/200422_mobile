@@ -3,8 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>布局视口</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 980px;
+			height: 200px;
+			background-color: skyblue;
+			font-size: 40px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="demo">布局视口：</div>
+	<script type="text/javascript" >
+		const demo = document.getElementById('demo') 
+		demo.innerHTML = `布局视口：${document.documentElement.clientWidth} px(css像素)`
+		console.log('当前移动设备的布局视口宽度为：',document.documentElement.clientWidth);
+	</script>
+	<img src="../imgs/react.jpg" alt="">
+	<img src="../imgs/vue.jpg" alt="">
 </body>
 </html>
