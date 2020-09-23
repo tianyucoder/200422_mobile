@@ -3,8 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>移动端_理想视口标准</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 375px;
+			height: 200px;
+			background-color: skyblue;
+		}
+	</style>
 </head>
 <body>
-
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		const demo = document.getElementById('demo')
+		console.log('布局视口的宽度',document.documentElement.clientWidth);
+		console.log('视觉视口的宽度',window.innerWidth);
+		demo.innerHTML = '布局：'+document.documentElement.clientWidth+'<br/>'
+		demo.innerHTML += '视觉：'+window.innerWidth
+	</script>
 </body>
 </html>
