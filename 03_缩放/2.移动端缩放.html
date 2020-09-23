@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>移动端缩放</title>
+	<title>移动端端缩放</title>
+	<style>
+		img{
+			width: 200px;
+			height: 160px;
+		}
+		#info{
+			font-size: 40px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="info"></div>
+	<img src="../imgs/1.jpg" alt="">
+	<img src="../imgs/2.jpg" alt="">
+	<img src="../imgs/3.jpg" alt="">
+	<img src="../imgs/4.jpg" alt="">
+	<script type="text/javascript" >
+		const info = document.getElementById('info')
+		console.log('布局视口为',document.documentElement.clientWidth);
+		console.log('视觉视口为',window.innerWidth);
+		info.innerHTML = '布局：'+document.documentElement.clientWidth+'<br/>'
+		info.innerHTML += '视觉：'+window.innerWidth
+		setInterval(()=>{
+			info.innerHTML = '布局：'+document.documentElement.clientWidth+'<br/>'
+			info.innerHTML += '视觉：'+window.innerWidth
+		},200)
+	</script>
 </body>
 </html>
