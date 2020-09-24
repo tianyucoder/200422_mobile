@@ -2,10 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>touch与click</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#demo{
+			width: 100%;
+			height: 200px;
+			background-color: skyblue;
+		}
+	</style>
 </head>
 <body>
-
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		const demo = document.getElementById('demo')
+		let time
+		demo.addEventListener('click',()=>{
+			console.log('click',Date.now()-time);
+			demo.innerHTML = Date.now()-time
+		})
+		demo.addEventListener('touchstart',()=>{
+			time = Date.now()
+			console.log('touchstart');
+		})
+	</script>
 </body>
 </html>
