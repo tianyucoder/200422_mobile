@@ -3,8 +3,47 @@
 <head>
 	<meta charset="UTF-8">
 	<title>所有元素1物理像素边框</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style>
+			#demo{
+				width: 2rem;
+				height: 2rem;
+				background-color: pink;
+				margin: 0 auto;
+				margin-top: 1rem;
+				border:1px solid black;
+			}
+			#demo2{
+				width: 2rem;
+				height: 2rem;
+				background-color: skyblue;
+				margin: 0 auto;
+				margin-top: 1rem;
+				border:1px solid black;
+			}
+	</style>
 </head>
 <body>
+	<div id="demo"></div>
+	<div id="demo2"></div>
+	<script type="text/javascript" >
+		function adapter (){
+				//1.获取当前手机的设备独立像素值
+				const dp = document.documentElement.clientWidth
+				//2.计算根字体
+				const rootFontSize = (dp*100)/375
+				//3.设置根字体的大小
+				document.documentElement.style.fontSize = rootFontSize + 'px'
+			}
+			adapter()
+			//如果更改了布局视口的大小---实时适配
+			window.onresize = adapter
 
+			const meta = document.querySelector('meta[name=viewport]')
+			const scale = 1/window.devicePixelRatio
+			const rootFont = parseInt(document.documentElement.style.fontSize)
+			meta.setAttribute('content','width=device-width,initial-scale='+scale)
+			document.documentElement.style.fontSize = rootFont * window.devicePixelRatio + 'px'
+	</script>
 </body>
 </html>
