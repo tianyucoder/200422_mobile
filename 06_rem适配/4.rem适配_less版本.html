@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>rem适配_less版本</title>
+	<title>rem适配方案二+less</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-
+	<div id="demo"></div>
+	<script type="text/javascript" >
+		function adapter (){
+			//1.获取当前手机的设备独立像素值
+			const dp = document.documentElement.clientWidth
+			//2.计算根字体
+			const rootFontSize = dp/10
+			//3.设置根字体的大小
+			document.documentElement.style.fontSize = rootFontSize + 'px'
+		}
+		adapter()
+		//如果更改了布局视口的大小---实时适配
+		window.onresize = adapter
+	</script>
 </body>
 </html>

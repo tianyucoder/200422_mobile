@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>rem适配方案二</title>
+	<title>rem适配方案一</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 	<style>
 		*{
@@ -10,11 +10,12 @@
 			padding: 0;
 		}
 		#demo{
-			width: 9.2rem;
-			height: 4rem;
+			width: 6.9rem;
+			height: 3rem;
 			margin: 0 auto;
-			margin-top: 0.4rem;
+			margin-top: 0.3rem;
 			background-color: skyblue;
+			border:1px solid black
 		}
 	</style>
 </head>
@@ -25,7 +26,7 @@
 			//1.获取当前手机的设备独立像素值
 			const dp = document.documentElement.clientWidth
 			//2.计算根字体
-			const rootFontSize = dp/10
+			const rootFontSize = (dp*100)/750
 			//3.设置根字体的大小
 			document.documentElement.style.fontSize = rootFontSize + 'px'
 		}
