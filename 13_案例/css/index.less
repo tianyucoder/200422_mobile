@@ -1,0 +1,73 @@
+@font:375/10rem;
+/* 设计稿宽度/10rem */
+html,body{
+	width: 100%;
+	height: 100%;
+}
+#app{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	#content{
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 49/@font;
+		background-color: orange;
+	}
+	#footer{
+		width: 100%;
+		height: 49/@font;
+		background-color: white;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-around;
+		.footer_item{
+			font-size: 0;
+			.footer_icon{
+				margin-top: 3/@font;
+				margin-bottom: 2/@font;
+				width: 25/@font;
+				height: 25/@font;
+				background-size: 100%;
+				background-image: url('../imgs/tab_home_normal.png');
+				&.active{
+					background-image: url('../imgs/tab_home_selected.png');
+				}
+			}
+			.footer_text{
+				color: #999999;
+				font-size: 12/@font;
+				&.active{
+					color: #FF5200;
+				}
+			}
+			&:nth-child(2){
+				.footer_icon{
+					background-image: url('../imgs/tab_store_normal.png');
+					&.active{
+						background-image: url('../imgs/tab_store_selected.png');
+					}
+				}
+			}
+			&:nth-child(3){
+				.footer_icon{
+					background-image: url('../imgs/tab_activity_normal.png');
+					&.active{
+						background-image: url('../imgs/tab_activity_selected.png');
+					}
+				}
+			}
+			&:nth-child(4){
+				.footer_icon{
+					background-image: url('../imgs/tab_mine_normal.png');
+					&.active{
+						background-image: url('../imgs/tab_mine_selected.png');
+					}
+				}
+			}
+		}
+	}
+}
