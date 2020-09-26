@@ -16,6 +16,15 @@ body {
   bottom: 1.30666667rem;
   background-color: orange;
 }
+#app #content .content_item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#app #content .content_item.show {
+  display: block;
+}
 #app #footer {
   width: 100%;
   height: 1.30666667rem;

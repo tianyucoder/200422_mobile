@@ -16,6 +16,7 @@ window.onresize = adapter
 const footerItems = document.querySelectorAll('#footer .footer_item')
 const footerIcons = document.querySelectorAll('#footer .footer_item .footer_icon')
 const footerText = document.querySelectorAll('#footer .footer_item .footer_text')
+const contentItems = document.querySelectorAll('#content .content_item')
 
 for (let i = 0; i < footerItems.length; i++) {
 	footerItems[i].addEventListener('touchstart',()=>{
@@ -23,9 +24,12 @@ for (let i = 0; i < footerItems.length; i++) {
 		for (let j = 0; j < footerItems.length; j++) {
 			footerIcons[j].className = 'footer_icon'
 			footerText[j].className = 'footer_text'
+			contentItems[j].className = 'content_item'
 		}
 		//2.点谁谁高亮
 		footerIcons[i].className = 'footer_icon active'
 		footerText[i].className = 'footer_text active'
+		contentItems[i].className = 'content_item show'
+
 	})
 }
